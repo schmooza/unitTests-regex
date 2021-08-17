@@ -30,19 +30,31 @@ if check == 0:
 	# feeds the dataset to the tests
 
 
-		for item in userData.iloc[0]:
+		startRow = 0
+		endRow = len(userData.iloc[0])
+		print (endRow, "length of data")
+		n = 0
+		while n <= endRow:
+			print (n,"debug - current row index")
+		#  selected columns
+			for item in userData.iloc[n]:
 
-			if check == 0:
+				if check == 0:
 
-				result = method_to_call(item)
-				# print(result,"debug return val")
-				pass_test.set_val(result)
-				pass_test.get_val()
-				# print ('next')
-				check = pass_test.get_val()
+					result = method_to_call(item)
+					# print(result,"debug return val")
+					pass_test.set_val(result)
+					pass_test.get_val()
+					# print ('next')
+					check = pass_test.get_val()
 
-			elif check == 1:
-				pass
+
+				elif check == 1:
+					exit()
+			n = n + 1
+
+else:
+	exit()
 #
 #
 #
